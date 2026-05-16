@@ -2,111 +2,64 @@
 
 PhishGuard is an AI-powered phishing detection and browser protection system designed to help users identify malicious websites, fake login pages, dangerous redirects, and suspicious links before they become security threats.
 
-The project combines browser-level protection, real-time URL analysis, phishing pattern detection, and optional AI-assisted scanning into a single security-focused platform. The goal of the system is to provide lightweight but powerful protection against modern phishing attacks while keeping the experience simple and user-friendly.
-
-This repository is a public preview version of the project created to showcase the concept, interface, workflow, and architecture of the system. The actual production implementation and private internal files are not included in this repository.
+The project combines a showcase website, Chrome extension, real-time URL analysis, and optional AI-assisted scanning into one security-focused platform. This repository is only a public preview of the project, created to show the concept, interface, workflow, and planned architecture. The actual production code and private implementation files are not included here.
 
 ---
 
 ## Project Overview
 
-PhishGuard currently consists of two major parts:
+PhishGuard has two main parts: a showcase/download website with a live URL checker and a Chrome extension that provides browser-level phishing protection.
 
-- A showcase/download website with a live URL checking interface
-- A Chrome extension with advanced phishing detection and browser protection features
-
-The extension is designed to classify websites into categories such as:
+The extension classifies websites as:
 
 - Safe
 - Suspicious
 - Dangerous
 
-Instead of only checking URLs, the system also analyzes page behaviour, login forms, redirects, brand impersonation patterns, suspicious domain structures, risky links, and phishing-related page content.
+Instead of only checking the URL, PhishGuard also looks at page behaviour, fake login forms, redirects, brand impersonation, risky links, suspicious domains, and phishing-related content.
 
 ---
 
 ## Core Features
 
 - Real-time phishing URL detection
-- Chrome extension protection system
+- Chrome extension protection
 - Dangerous website blocking
 - Suspicious page warning banners
 - Popup-based URL checking
-- AI-assisted phishing analysis
-- Dynamic phishing page rechecking
+- AI-assisted analysis
 - Fake login page detection
 - Risky link interception
 - Page-content analysis
-- Local QA testing environment
-- Dashboard and website preview
-- Security-focused browser workflow
+- Local testing environment
 
 ---
 
 ## Detection System
 
-PhishGuard uses multiple layers of phishing analysis instead of relying on only one detection method.
+PhishGuard uses multiple detection layers to catch different phishing tricks. It checks for brand impersonation, typosquatting, homoglyph attacks, punycode spoofing, suspicious redirects, risky form actions, URL shorteners, raw IP domains, fake payment pages, OTP traps, and deep suspicious subdomains.
 
-The system checks for:
-
-- Brand impersonation
-- Typosquatting domains
-- Homoglyph attacks
-- Punycode and IDN spoofing
-- Fake login pages
-- Suspicious redirects
-- Embedded credential traps
-- Risky form actions
-- URL shorteners
-- Raw IP-based domains
-- High-risk hosting patterns
-- Deep subdomains and encoded URLs
-- Fake payment and OTP pages
-
-The extension can also recheck websites dynamically if suspicious login forms or credential fields appear later after the page initially loads.
+The extension can also recheck a page dynamically if login forms, credential fields, or risky content appear after the page has already loaded.
 
 ---
 
 ## How It Works
 
-When a user visits or checks a website, PhishGuard first runs a lightweight local detector to quickly analyze the URL structure and phishing indicators.
+When a user opens or checks a website, PhishGuard first runs a fast local detector to analyze the URL and visible phishing signals. If deeper analysis is needed, the system can combine the result with an optional AI-powered backend service.
 
-If stronger analysis is needed, the system can combine results with the optional AI-powered backend service. Based on the final risk score, the extension either:
+Based on the final risk level, PhishGuard can:
 
-- Allows the page normally
-- Displays a warning banner
-- Blocks the website completely
+- Allow the website normally
+- Show a warning banner
+- Block the website completely
 
-The system is designed to prioritize fast detection while minimizing unnecessary interruptions for safe websites.
-
----
-
-## Example Detection Flow
-
-```text
-URL Checked:
-https://faceb00k-login-security.example.com
-
-Detection Results:
-- Brand impersonation detected
-- Suspicious login keywords found
-- Dangerous domain structure
-- Fake credential targeting indicators
-
-Final Verdict:
-DANGEROUS
-
-Action:
-Website blocked and warning page displayed.
-```
+The goal is to keep users protected without disturbing normal browsing on safe websites.
 
 ---
 
 ## Screenshots
 
-The screenshots included in this repository demonstrate different parts of the project including the extension workflow, phishing detection interface, warning system, dashboard previews, testing environment, and overall user experience.
-
-They are added only to showcase the design direction and functionality preview of the system.
+The screenshots added in this repository show the project preview, including the extension workflow, detection interface, warning screens, dashboard-style pages, and testing flow. They are included only to give a clear idea of how the system looks and works from a user perspective.
 
 ---
 
@@ -119,17 +72,14 @@ They are added only to showcase the design direction and functionality preview o
 - FastAPI
 - SQLite
 - Local AI service integration
-- Browser security workflows
 
 ---
 
 ## Repository Note
 
-This repository is only intended as a preview and showcase version of PhishGuard.
+This repository is only a preview and showcase version of PhishGuard. The actual source code, backend logic, AI models, security rules, API keys, and production-level implementation remain private.
 
-The actual source code, backend logic, AI models, security rules, API keys, private workflows, and production implementation remain private.
-
-The purpose of this repository is to present the project concept, screenshots, architecture direction, and feature overview.
+The purpose of this repo is to present the project concept, screenshots, feature overview, and architecture direction.
 
 ---
 
@@ -137,13 +87,10 @@ The purpose of this repository is to present the project concept, screenshots, a
 
 - Stronger AI phishing analysis
 - Cloud reputation integration
-- Browser-wide protection system
 - Real-time threat intelligence
 - Advanced dashboard analytics
 - Safer email and link scanning
-- Enterprise security support
 - Multi-browser extension support
-- Live phishing threat monitoring
 
 ---
 
