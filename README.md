@@ -159,6 +159,95 @@ They are included to give a clear idea of how PhishGuard looks, works, and prote
 
 ---
 
+# How To Try The Extension
+
+This preview repository does not include the private production source code. To try PhishGuard, use the live website and downloadable extension ZIP.
+
+## Step 1: Open The Live Website
+
+```text
+https://phish-guard-site.vercel.app/
+```
+
+## Step 2: Download The Extension ZIP
+
+Click the download button on the website, or use the direct ZIP link:
+
+```text
+https://phish-guard-site.vercel.app/dist/phishguard-extension-2.0.0.zip
+```
+
+## Step 3: Create A Permanent Extension Folder
+
+Create a folder where the extension files will stay permanently. Example:
+
+```text
+C:\Users\rayan\OneDrive\Desktop\PhishGuard-Extension
+```
+
+Move the downloaded ZIP into that folder.
+
+## Step 4: Extract The ZIP
+
+Right-click the ZIP file and choose `Extract All`.
+
+After extraction, open the extracted folder and confirm that it contains:
+
+```text
+manifest.json
+```
+
+Chrome must be pointed to the folder that contains `manifest.json`.
+
+## Step 5: Open Chrome Extensions
+
+Open this in Chrome:
+
+```text
+chrome://extensions/
+```
+
+Or run this from PowerShell:
+
+```powershell
+Start-Process chrome.exe "chrome://extensions/"
+```
+
+## Step 6: Load The Extension
+
+1. Turn on `Developer mode`.
+2. Click `Load unpacked`.
+3. Select the extracted PhishGuard folder that contains `manifest.json`.
+4. Pin PhishGuard from the Chrome extensions menu.
+
+Do not delete or move the extracted folder after loading it. Chrome reads the extension from that folder every time it starts.
+
+## Step 7: Use PhishGuard
+
+After loading the extension:
+
+- Open any website and click the PhishGuard extension icon.
+- Paste a URL into the popup to check it manually.
+- Use safe, suspicious, and dangerous test URLs to verify the verdict flow.
+- Dangerous pages should show a block screen.
+- Suspicious pages should show a warning banner.
+
+Example test URLs:
+
+```text
+https://google.com                                      Safe
+https://bit.ly/a1b2c3                                  Suspicious
+https://instagrarn.com                                 Dangerous
+https://paypal-secure-login.example.com/verify         Dangerous
+https://google.com.security-update.example.com/login   Dangerous
+```
+
+## Important Note
+
+The optional Python AI service and internal source files are part of the private production project. The downloadable extension still works with its built-in local browser detector.
+
+---
+
 # Current Limitations
 
 - This repository is only a public preview and showcase version
